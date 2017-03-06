@@ -18,14 +18,12 @@ module.exports = function(app, express) {
         res.sendStatus(400);
       }
 
-      console.log('----------', entries);
       res.send(entries);
     });
   });
 
   app.get('/API/entries/:id', function(req, res) {
     var id = req.params.id;
-    console.log(id);
 
     Entry.
       findOne({
@@ -45,11 +43,11 @@ module.exports = function(app, express) {
   });
 
   app.post('/API/entries', function(req, res) {
-    // trigger add
+    // req.body needs to be an object with title and body properties
     var title = req.body.title;
     var body = req.body.body;
     var entry = new Entry({ title: title, body: body});
-    console.log('+++++++++', req.body);
+
     entry.save(function(err) {
       if (err) {
         console.log('error creating new entry...');
@@ -60,9 +58,42 @@ module.exports = function(app, express) {
     res.send(entry);
   });
 
+  app.put('/API/entries/:id', function(req, res) {
+    // req.body needs to be an object with title and body properties
+    var id = req.params.id;
+    var title = req.body.title;
+    var body = req.body.body;
+
+    Entry.
+      findOne({
+        _id: id
+      })
+      .then(function(doc) {
+        if (doc) {
+          if (title) doc.title = title;
+          if (body) doc.body = body;
+
+          doc.save(function (err) {
+            if (err) {
+              console.log('error modifying entry...');
+              console.error(err);
+              res.sendStatus(400);
+              // throw err;
+            }
+            res.send(doc);
+          });
+        } else {
+          res.sendStatus(400);
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+        res.sendStatus(400);
+      });
+  });
+
   app.delete('/API/entries/:id', function(req, res) {
     var id = req.params.id;
-    console.log(id);
 
     Entry.
       findOneAndRemove({
