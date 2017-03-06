@@ -13,7 +13,10 @@ module.exports = function(app, express) {
   app.get('/API/entries', function(req, res) {
     var entries;
     Entry.find(function (err, entries) {
-      if (err) return console.error(err);
+      if (err) {
+        console.error(err);
+        res.sendStatus(400);
+      }
 
       console.log('----------', entries);
       res.send(entries);
@@ -29,10 +32,15 @@ module.exports = function(app, express) {
         _id: id
       })
       .then(function(doc) {
-        res.send(doc);
+        if (doc) {
+          res.send(doc);
+        } else {
+          res.sendStatus(400);
+        }
       })
       .catch(function(err) {
-        return console.error(err);
+        console.error(err);
+        res.sendStatus(400);
       });
   });
 
@@ -45,7 +53,8 @@ module.exports = function(app, express) {
     entry.save(function(err) {
       if (err) {
         console.log('error creating new entry...');
-        throw err;
+        res.sendStatus(400);
+        // throw err;
       }
     });
     res.send(entry);
@@ -59,8 +68,12 @@ module.exports = function(app, express) {
       findOneAndRemove({
         _id: id
       }, function(err) {
-        console.log('error deleting entry...');
-        throw err;
+        if (err) {
+          console.log('error deleting entry...');
+          // throw err;
+          res.sendStatus(400);
+        }
+        res.sendStatus(200);
       });
   });
   
