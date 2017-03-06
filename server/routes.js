@@ -20,6 +20,22 @@ module.exports = function(app, express) {
     });
   });
 
+  app.get('/API/entries/:id', function(req, res) {
+    var id = req.params.id;
+    console.log(id);
+
+    Entry.
+      findOne({
+        _id: id
+      })
+      .then(function(doc) {
+        res.send(doc);
+      })
+      .catch(function(err) {
+        return console.error(err);
+      });
+  });
+
   app.post('/API/entries', function(req, res) {
     // trigger add
     var title = req.body.title;
@@ -34,4 +50,18 @@ module.exports = function(app, express) {
     });
     res.send(entry);
   });
+
+  app.delete('/API/entries/:id', function(req, res) {
+    var id = req.params.id;
+    console.log(id);
+
+    Entry.
+      findOneAndRemove({
+        _id: id
+      }, function(err) {
+        console.log('error deleting entry...');
+        throw err;
+      });
+  });
+  
 };
