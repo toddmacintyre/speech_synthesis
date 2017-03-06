@@ -2,8 +2,9 @@
   "name": "speech_synthesis",
   "version": "1.0.0",
   "description": "Text to speech synthesis with persistent data storage",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,9 @@
   },
   "homepage": "https://github.com/toddmacintyre/speech_synthesis#readme",
   "dependencies": {
-    "mongoose": "^4.8.6"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.8.6",
+    "morgan": "^1.8.1"
   }
 }

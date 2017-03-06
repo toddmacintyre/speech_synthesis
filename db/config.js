@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-
 var Schema = mongoose.Schema;
 
 var entriesSchema = new Schema({
@@ -11,3 +10,4 @@ var entriesSchema = new Schema({
     default: Date.now
   }
 });
+
