@@ -26,13 +26,12 @@ module.exports = function(app, express) {
     var body = req.body.body;
     var entry = new Entry({ title: title, body: body});
     console.log('+++++++++', req.body);
+    entry.save(function(err) {
+      if (err) {
+        console.log('error creating new entry...');
+        throw err;
+      }
+    });
     res.send(entry);
-    // entry.save(function(err) {
-    //   if (err) {
-    //     console.log('error creating new entry...');
-    //     throw err;
-    //   }
-    // });
   });
-
 };
