@@ -20,8 +20,17 @@ angular.module('myApp.services', [])
     });
   };
 
+  var deleteOne = function(id) {
+    // console.log(id);
+    return $http({
+      method: 'DELETE',
+      url: '/api/entries/' + id,
+    });
+  }
+
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    deleteOne: deleteOne
   };
 });

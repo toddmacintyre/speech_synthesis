@@ -1,16 +1,15 @@
 <input type'text' ng-model='search' placeholder='filter' />
 
 <div ng-repeat="entry in data.entries | filter:search | orderBy:'date'">
-  {{entry}}
+  <h3>{{entry.title}}</h3>
+  <p>{{entry.body}}</p>
+  <pre>{{entry._id}}</pre>
+  <button ng-click="deleteEntry(entry._id)">Delete</button>
 </div>
 
 
-<pre>{{search}}</pre>
-<pre>{{data.entries}}</pre>
 
+<br />
+<pre>SEARCH:  {{search}}</pre>
+<pre>DATA.ENTRIES:  {{data.entries}}</pre>
 
-
-
-
-
-      <!--<div> ng-repeat='entry in '

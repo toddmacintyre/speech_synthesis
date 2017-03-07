@@ -1,21 +1,28 @@
 angular.module('myApp.archive', [])
 
 .controller('ArchiveController', function($scope, Entries) {
-  $scope.getAll = function() {
-    services.Entries()
-  }
   
   $scope.data = {};
 
-  var initializeEntries = function () {
+
+  var initializeEntries = function() {
     Entries.getAll()
-      .then(function (entries) {
+      .then(function(entries) {
         $scope.data.entries = entries;
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.error(error);
       });
   };
-
   initializeEntries();
+
+
+  $scope.deleteEntry = function(id) {
+    console.log(id);
+    Entries.deleteOne(id)
+      .then(function() {
+        initializeEntries();
+      });
+  };
+
 });

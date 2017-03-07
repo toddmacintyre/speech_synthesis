@@ -10,16 +10,16 @@ angular.module('myApp', [
 ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/', {
+    .when('/archive', {
       templateUrl: 'app/archive/archive.html',
       controller: 'ArchiveController'
     })
     .when('/create', {
-      templateUrl: '../../create/create.html',
+      templateUrl: 'app/create/create.html',
       controller: 'CreateController'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/archive'
     });
 });
 

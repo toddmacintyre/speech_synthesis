@@ -14,7 +14,6 @@ mongoose.connect('mongodb://localhost/T2S');
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './../public')));
-// app.use(express.static(path.join(__dirname, './../node_modules')));
 
 // listen on port
 var port = process.env.PORT || 8050;

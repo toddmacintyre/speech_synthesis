@@ -103,8 +103,10 @@ module.exports = function(app, express) {
           console.log('error deleting entry...');
           // throw err;
           res.sendStatus(400);
+        } else {
+          res.sendStatus(200);
         }
-        res.sendStatus(200);
+        
       });
   });
   
