@@ -1,7 +1,16 @@
-<!--<input type'text' ng-model='search' placeholder='filter' />
+<input type'text' ng-model='search' placeholder='filter' />
 
-<h1>{{search}}</h1>
-<input type='text' ng-model='search' />-->
+<div ng-repeat="entry in data.entries | filter:search | orderBy:'date'">
+  {{entry}}
+</div>
 
 
-      <!--<div> ng-repeat='entry in '-->
+<pre>{{search}}</pre>
+<pre>{{data.entries}}</pre>
+
+
+
+
+
+
+      <!--<div> ng-repeat='entry in '

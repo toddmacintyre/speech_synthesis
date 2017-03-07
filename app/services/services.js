@@ -1,4 +1,4 @@
-angular.module('services', [])
+angular.module('myApp.services', [])
 
 .factory('Entries', function ($http) {
   var getAll = function() {
@@ -11,4 +11,17 @@ angular.module('services', [])
       return resp.data;
     });
   }
+
+  var addOne = function (entry) {
+    return $http({
+      method: 'POST',
+      url: '/api/entries',
+      data: entry
+    });
+  };
+
+  return {
+    getAll: getAll,
+    addOne: addOne
+  };
 });

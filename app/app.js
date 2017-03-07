@@ -3,8 +3,9 @@
 // myApp.services??
 
 angular.module('myApp', [
-  'services',
-  'archive',
+  'myApp.services',
+  'myApp.archive',
+  'myApp.create',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {

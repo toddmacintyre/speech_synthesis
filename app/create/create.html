@@ -1,0 +1,31 @@
+<form name='entrySubmit' ng-submit="submitEntry()">
+  <label for="title">Title:</label>
+  <input name="title" type="text" ng-model="title" placeholder="Title..." />
+
+  <label for="text">Text:</label>
+  <input name="text" type="text" ng-model="text" placeholder="Text..."/>
+
+  <button type="submit" value"Submit">Save</button>
+</form>
+
+<span>{{result}}</span>
+
+
+
+
+<!--<form name='shortlyForm' ng-submit="addLink()" novalidate>
+  <input name='link' type="url"
+    ng-model="link.url"
+    placeholder="Enter your url here" required
+    ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"/>
+
+  <button type="submit" value="Shorten" ng-disabled='shortlyForm.$invalid'>
+    add
+  </button>
+</form>
+<div ng-if='shortlyForm.link.$error.required && shortlyForm.$dirty' class="message">
+  <h2>Url required</h2>
+</div>
+<div ng-show='shortlyForm.link.$error.url && shortlyForm.$dirty' class="message">
+  <h2>Not a valid url</h2>
+</div>-->
