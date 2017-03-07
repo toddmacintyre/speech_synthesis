@@ -8,14 +8,13 @@ var bodyParser = require('body-parser'); // do we need this for our database?
 var app = express();
 
 // connect to the mongo database
-// mongoose.connect('mongodb://localhost/T2S');
 var user = process.env.user;
 var pass = process.env.pass;
-
-console.log('user: ', user);
-console.log('pass: ', pass);
-
-mongoose.connect(`mongodb://${user}:${pass}@ds123050.mlab.com:23050/t2s`);
+if (user && pass) {
+  mongoose.connect(`mongodb://${user}:${pass}@ds123050.mlab.com:23050/t2s`);
+} else {
+  mongoose.connect('mongodb://localhost/T2S');
+}
 
 // add middleware
 app.use(bodyParser.json());
