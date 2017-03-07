@@ -25,4 +25,9 @@ angular.module('myApp.archive', [])
       });
   };
 
+  $scope.t2s = function(text) {
+    var utterThis = new SpeechSynthesisUtterance('hello there!');
+    window.speechSynthesis.speak(utterThis);
+  }
+
 });

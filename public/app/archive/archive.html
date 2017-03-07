@@ -3,13 +3,14 @@
 <div ng-repeat="entry in data.entries | filter:search | orderBy:'date'">
   <h3>{{entry.title}}</h3>
   <p>{{entry.body}}</p>
-  <pre>{{entry._id}}</pre>
+  <!--<pre>{{entry._id}}</pre>-->
+  <button ng-click="playEntry(entry.body)">Play</button>
   <button ng-click="deleteEntry(entry._id)">Delete</button>
 </div>
 
 
 
-<br />
+<!--<br />
 <pre>SEARCH:  {{search}}</pre>
-<pre>DATA.ENTRIES:  {{data.entries}}</pre>
+<pre>DATA.ENTRIES:  {{data.entries}}</pre>-->
 
