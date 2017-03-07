@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 60px 0 60px;
+}
+
+.footer {
+  height: 20px;
+  background-color: #876E52;
+  text-align: right;
+  padding-right: 5%;
+}
+
+body,
+.jumbotron {
+  color: #402734;
+  background-color: #D6C9A6;
+  margin: 0;
+}
+
+.navbar {
+  color: #402734;
+  background-color: #63BD99;
+  padding-right: 5%;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  margin: 10px 10px 20px 0;
+}

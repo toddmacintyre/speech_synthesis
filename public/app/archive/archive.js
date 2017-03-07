@@ -4,7 +4,6 @@ angular.module('myApp.archive', [])
   
   $scope.data = {};
 
-
   var initializeEntries = function() {
     Entries.getAll()
       .then(function(entries) {

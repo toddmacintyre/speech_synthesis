@@ -1,11 +1,13 @@
 <div class="container">
 
-  <input type'text' ng-model='search' placeholder='filter' />
-
-  <!--<br />
   <br />
 
-  <div class="btn-group">
+  <input class="form-control" type'text' ng-model='search' placeholder='filter' />
+
+  <br />
+  <br />
+
+  <!--<div class="btn-group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Select Language &nbsp<span class="caret"></span>
     </button>
@@ -14,18 +16,20 @@
     </ul>
   </div>-->
 
+  <!--<select style="width: 200px">
+    <div ng-repeat="voice in voices">
+      <option ng-click="setVoice">{{voice.name}}</option>
+    </div>
+  </select>
+
+  <pre>{{voices}}</pre>-->
+
 
   <div ng-repeat="entry in data.entries | filter:search | orderBy:'date'">
     <h3>{{entry.title}}</h3>
     <p>{{entry.body}}</p>
-    <!--<pre>{{entry._id}}</pre>-->
-    <button ng-click="playEntry(entry.body)">Play</button>
-    <button ng-click="deleteEntry(entry._id)">Delete</button>
+    <button class="btn btn-success" ng-click="playEntry(entry.body)">Play</button>
+    <button class="btn btn-danger" ng-click="deleteEntry(entry._id)">Delete</button>
   </div>
 
 </div>
-
-<!--<br />
-<pre>SEARCH:  {{search}}</pre>
-<pre>DATA.ENTRIES:  {{data.entries}}</pre>-->
-

@@ -7,7 +7,6 @@ angular.module('myApp.services', [])
       url: '/API/entries'
     })
     .then(function(resp) {
-      console.log(resp);
       return resp.data;
     });
   }
@@ -21,7 +20,6 @@ angular.module('myApp.services', [])
   };
 
   var deleteOne = function(id) {
-    // console.log(id);
     return $http({
       method: 'DELETE',
       url: '/api/entries/' + id,
