@@ -25,6 +25,7 @@ angular.module('myApp.archive', [])
   };
 
   $scope.playEntry = function(text) {
+    
     var utterThis = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(utterThis);
   }
