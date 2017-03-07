@@ -1,17 +1,24 @@
 <form name='entrySubmit' ng-submit="submitEntry()">
-  <label for="title">Title:</label>
-  <input name="title" type="text" ng-model="title" placeholder="Title..." />
+
+  <div class="row">
+    <div class="col-xs-8">
+      <label for="title">Title:</label>
+      <input class="form-control" name="title" type="text" ng-model="title" placeholder="..." />
+    </div>
+  </div>
 
   <br />
 
-  <label for="text">Text:</label>
-  <input name="text" type="text" ng-model="text" placeholder="Text..."/>
+  <div class="row">
+    <div class="col-xs-8">
+      <label for="text">Text:</label>
+      <input class="form-control" name="text" type="text" ng-model="text" placeholder="..."/>
+    </div>
+  </div>
 
   <br />
-  <br />
-  
 
-  <button type="submit" value"Submit">Save</button>
+  <button class="btn btn-success" type="submit" value"Submit">Save</button>
 </form>
 
 <br />
