@@ -1,14 +1,29 @@
-<input type'text' ng-model='search' placeholder='filter' />
+<div class="container">
 
-<div ng-repeat="entry in data.entries | filter:search | orderBy:'date'">
-  <h3>{{entry.title}}</h3>
-  <p>{{entry.body}}</p>
-  <!--<pre>{{entry._id}}</pre>-->
-  <button ng-click="playEntry(entry.body)">Play</button>
-  <button ng-click="deleteEntry(entry._id)">Delete</button>
+  <input type'text' ng-model='search' placeholder='filter' />
+
+  <!--<br />
+  <br />
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Select Language &nbsp<span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+    </ul>
+  </div>-->
+
+
+  <div ng-repeat="entry in data.entries | filter:search | orderBy:'date'">
+    <h3>{{entry.title}}</h3>
+    <p>{{entry.body}}</p>
+    <!--<pre>{{entry._id}}</pre>-->
+    <button ng-click="playEntry(entry.body)">Play</button>
+    <button ng-click="deleteEntry(entry._id)">Delete</button>
+  </div>
+
 </div>
-
-
 
 <!--<br />
 <pre>SEARCH:  {{search}}</pre>

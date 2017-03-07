@@ -16,7 +16,6 @@ angular.module('myApp.archive', [])
   };
   initializeEntries();
 
-
   $scope.deleteEntry = function(id) {
     console.log(id);
     Entries.deleteOne(id)
@@ -25,8 +24,8 @@ angular.module('myApp.archive', [])
       });
   };
 
-  $scope.t2s = function(text) {
-    var utterThis = new SpeechSynthesisUtterance('hello there!');
+  $scope.playEntry = function(text) {
+    var utterThis = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(utterThis);
   }
 
