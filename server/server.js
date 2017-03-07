@@ -1,5 +1,5 @@
 var express = require('express');
-// var path = require('path');
+var path = require('path');
 // var router = express.Router();
 var mongoose = require('mongoose');
 var morgan = require('morgan');
@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/T2S');
 // add middleware
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, './../public')));
 
 // listen on port
 var port = process.env.PORT || 8050;
