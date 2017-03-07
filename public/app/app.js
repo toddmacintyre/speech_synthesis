@@ -11,11 +11,11 @@ angular.module('myApp', [
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'archive/archive.html',
+      templateUrl: 'app/archive/archive.html',
       controller: 'ArchiveController'
     })
     .when('/create', {
-      templateUrl: 'create/create.html',
+      templateUrl: '../../create/create.html',
       controller: 'CreateController'
     })
     .otherwise({
