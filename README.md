@@ -56,5 +56,6 @@ npm install
 
 > Angular Controller
 ![Angular Controller](http://i.imgur.com/OQDhdg1.png)
+---
 > Server Routes
 ![Server Routes](http://i.imgur.com/9F1beL6.png)
