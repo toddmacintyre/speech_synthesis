@@ -17,7 +17,6 @@ module.exports = function(app, express) {
         console.error(err);
         res.sendStatus(400);
       }
-
       res.send(entries);
     });
   });
@@ -106,8 +105,8 @@ module.exports = function(app, express) {
         } else {
           res.sendStatus(200);
         }
-        
+
       });
   });
-  
+
 };
