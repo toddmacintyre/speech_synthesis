@@ -19,7 +19,6 @@ Welcome to [*Text 2 Speech Synthesis*](http://text2speechsynth.herokuapp.com)! L
 1. [Team](#the-team)
 
 
-
 ## Usage
 
 #### Listen to text as speech:
