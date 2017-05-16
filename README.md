@@ -1,8 +1,5 @@
 # [Text 2 Speech Synthesis](http://text2speechsynth.herokuapp.com/)
 
-
----
-
 Welcome to [*Text 2 Speech Synthesis*](http://text2speechsynth.herokuapp.com)! Listen to synthesized text input for easy and accessible reading.
 
 ***
@@ -20,7 +17,6 @@ Welcome to [*Text 2 Speech Synthesis*](http://text2speechsynth.herokuapp.com)! L
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
 1. [Team](#the-team)
-1. [Screen Shots](#screenshots)
 
 
 
@@ -51,10 +47,3 @@ From within the root directory:
 ```
 npm install
 ```
-
-## Screenshots
-
-> Angular Controller
-![Angular Controller](http://i.imgur.com/OQDhdg1.png)
-> Server Routes
-![Server Routes](http://i.imgur.com/9F1beL6.png)
